@@ -1,15 +1,61 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
-    </dependencies>
-    <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
-            </objects>
-        </scene>
-    </scenes>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<device id="watch38" orientation="portrait">
+<adaptation id="fullscreen"/>
+</device>
+<dependencies>
+<deployment identifier="watchOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+</dependencies>
+<customFonts key="customFonts">
+<array key="joystix monospace.ttf">
+<string>JoystixMonospace-Regular</string>
+</array>
+</customFonts>
+<scenes>
+<!--Interface Controller-->
+<scene sceneID="aou-V4-d1y">
+<objects>
+<controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Calendar_WatchKit_App" customModuleProvider="target">
+<items>
+<label width="136" height="15" alignment="center" text="Month" textAlignment="center" id="QWk-bs-alW">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="16"/>
+</label>
+<separator alignment="left" id="FKf-Tw-c3w"/>
+<label width="136" height="15" alignment="center" text="Week" textAlignment="center" baselineAdjustment="alignCenters" id="72h-13-DlF">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+</label>
+<separator alignment="left" id="YjX-ti-QSS"/>
+<label width="136" height="15" alignment="center" text="Days 1" textAlignment="center" baselineAdjustment="alignCenters" id="eL2-JR-mhe">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+</label>
+<label width="136" height="15" alignment="center" text="Days 2" textAlignment="center" baselineAdjustment="alignCenters" id="gNs-1E-P7b">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+</label>
+<label width="136" height="15" alignment="center" text="Days 3" textAlignment="center" baselineAdjustment="alignCenters" id="ZKU-l0-JQ1">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+</label>
+<label width="136" height="15" alignment="center" text="Days 4" textAlignment="center" baselineAdjustment="alignCenters" id="dZz-Bp-R7g">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+</label>
+<label width="136" height="15" alignment="center" text="Days 5" textAlignment="center" baselineAdjustment="alignCenters" id="XWG-CE-Br2">
+<fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+</label>
+</items>
+<connections>
+<outlet property="days1Label" destination="eL2-JR-mhe" id="5qu-9e-Xkc"/>
+<outlet property="days2Label" destination="gNs-1E-P7b" id="7R1-gk-ao4"/>
+<outlet property="days3Label" destination="ZKU-l0-JQ1" id="mfv-gG-15e"/>
+<outlet property="days4Label" destination="dZz-Bp-R7g" id="GeZ-Cj-3Yb"/>
+<outlet property="days5Label" destination="XWG-CE-Br2" id="s2M-5y-MEB"/>
+<outlet property="monthLabel" destination="QWk-bs-alW" id="Wfa-Au-2hZ"/>
+<outlet property="weekLabel" destination="72h-13-DlF" id="iUZ-Gy-BPz"/>
+</connections>
+</controller>
+</objects>
+<point key="canvasLocation" x="34" y="41"/>
+</scene>
+</scenes>
 </document>
+
