@@ -20,6 +20,18 @@
 		7F92958B1FAD48C6005CC41D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92958A1FAD48C6005CC41D /* ExtensionDelegate.swift */; };
 		7F92958D1FAD48C6005CC41D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92958C1FAD48C6005CC41D /* ComplicationController.swift */; };
 		7F92958F1FAD48C6005CC41D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F92958E1FAD48C6005CC41D /* Assets.xcassets */; };
+		7F9295A31FAD4979005CC41D /* joystix monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A21FAD4979005CC41D /* joystix monospace.ttf */; };
+		7F9295A41FAD4979005CC41D /* joystix monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A21FAD4979005CC41D /* joystix monospace.ttf */; };
+		7F9295A51FAD4979005CC41D /* joystix monospace.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A21FAD4979005CC41D /* joystix monospace.ttf */; };
+		7F9295A91FAD4988005CC41D /* calendar-44.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A61FAD4988005CC41D /* calendar-44.png */; };
+		7F9295AA1FAD4988005CC41D /* calendar-44.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A61FAD4988005CC41D /* calendar-44.png */; };
+		7F9295AB1FAD4988005CC41D /* calendar-44.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A61FAD4988005CC41D /* calendar-44.png */; };
+		7F9295AC1FAD4988005CC41D /* calendar-36.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A71FAD4988005CC41D /* calendar-36.png */; };
+		7F9295AD1FAD4988005CC41D /* calendar-36.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A71FAD4988005CC41D /* calendar-36.png */; };
+		7F9295AE1FAD4988005CC41D /* calendar-36.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A71FAD4988005CC41D /* calendar-36.png */; };
+		7F9295AF1FAD4988005CC41D /* calendar-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A81FAD4988005CC41D /* calendar-58.png */; };
+		7F9295B01FAD4988005CC41D /* calendar-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A81FAD4988005CC41D /* calendar-58.png */; };
+		7F9295B11FAD4988005CC41D /* calendar-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295A81FAD4988005CC41D /* calendar-58.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +94,10 @@
 		7F92958C1FAD48C6005CC41D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		7F92958E1FAD48C6005CC41D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F9295901FAD48C6005CC41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F9295A21FAD4979005CC41D /* joystix monospace.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "joystix monospace.ttf"; sourceTree = "<group>"; };
+		7F9295A61FAD4988005CC41D /* calendar-44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-44.png"; sourceTree = "<group>"; };
+		7F9295A71FAD4988005CC41D /* calendar-36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-36.png"; sourceTree = "<group>"; };
+		7F9295A81FAD4988005CC41D /* calendar-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-58.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,7 @@
 		7F9295591FAD48C6005CC41D = {
 			isa = PBXGroup;
 			children = (
+				7F92959E1FAD48F8005CC41D /* Resources */,
 				7F9295641FAD48C6005CC41D /* CalPlus */,
 				7F9295781FAD48C6005CC41D /* CalPlus WatchKit App */,
 				7F9295871FAD48C6005CC41D /* CalPlus WatchKit Extension */,
@@ -155,6 +172,33 @@
 				7F9295901FAD48C6005CC41D /* Info.plist */,
 			);
 			path = "CalPlus WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7F92959E1FAD48F8005CC41D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F9295A11FAD4959005CC41D /* Icons */,
+				7F9295A01FAD4948005CC41D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7F9295A01FAD4948005CC41D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7F9295A21FAD4979005CC41D /* joystix monospace.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7F9295A11FAD4959005CC41D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				7F9295A71FAD4988005CC41D /* calendar-36.png */,
+				7F9295A61FAD4988005CC41D /* calendar-44.png */,
+				7F9295A81FAD4988005CC41D /* calendar-58.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +306,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9295A31FAD4979005CC41D /* joystix monospace.ttf in Resources */,
 				7F9295701FAD48C6005CC41D /* LaunchScreen.storyboard in Resources */,
+				7F9295AC1FAD4988005CC41D /* calendar-36.png in Resources */,
 				7F92956D1FAD48C6005CC41D /* Assets.xcassets in Resources */,
 				7F92956B1FAD48C6005CC41D /* Main.storyboard in Resources */,
+				7F9295A91FAD4988005CC41D /* calendar-44.png in Resources */,
+				7F9295AF1FAD4988005CC41D /* calendar-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +321,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F92957D1FAD48C6005CC41D /* Assets.xcassets in Resources */,
+				7F9295AA1FAD4988005CC41D /* calendar-44.png in Resources */,
+				7F9295B01FAD4988005CC41D /* calendar-58.png in Resources */,
 				7F92957B1FAD48C6005CC41D /* Interface.storyboard in Resources */,
+				7F9295A41FAD4979005CC41D /* joystix monospace.ttf in Resources */,
+				7F9295AD1FAD4988005CC41D /* calendar-36.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +333,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9295A51FAD4979005CC41D /* joystix monospace.ttf in Resources */,
 				7F92958F1FAD48C6005CC41D /* Assets.xcassets in Resources */,
+				7F9295AE1FAD4988005CC41D /* calendar-36.png in Resources */,
+				7F9295B11FAD4988005CC41D /* calendar-58.png in Resources */,
+				7F9295AB1FAD4988005CC41D /* calendar-44.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
