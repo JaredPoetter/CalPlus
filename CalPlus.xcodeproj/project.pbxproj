@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F4BFB421FB3EBA900DEBC6E /* DayRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BFB411FB3EBA900DEBC6E /* DayRowController.swift */; };
 		7F9295661FAD48C6005CC41D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9295651FAD48C6005CC41D /* AppDelegate.swift */; };
 		7F9295681FAD48C6005CC41D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9295671FAD48C6005CC41D /* ViewController.swift */; };
 		7F92956B1FAD48C6005CC41D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9295691FAD48C6005CC41D /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F4BFB411FB3EBA900DEBC6E /* DayRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRowController.swift; sourceTree = "<group>"; };
 		7F9295621FAD48C6005CC41D /* CalPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9295651FAD48C6005CC41D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9295671FAD48C6005CC41D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7F92958C1FAD48C6005CC41D /* ComplicationController.swift */,
 				7F92958E1FAD48C6005CC41D /* Assets.xcassets */,
 				7F9295901FAD48C6005CC41D /* Info.plist */,
+				7F4BFB411FB3EBA900DEBC6E /* DayRowController.swift */,
 			);
 			path = "CalPlus WatchKit Extension";
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				7F92958B1FAD48C6005CC41D /* ExtensionDelegate.swift in Sources */,
 				7F9295891FAD48C6005CC41D /* InterfaceController.swift in Sources */,
 				7F92958D1FAD48C6005CC41D /* ComplicationController.swift in Sources */,
+				7F4BFB421FB3EBA900DEBC6E /* DayRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

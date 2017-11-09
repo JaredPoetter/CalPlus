@@ -20,6 +20,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var days4Label: WKInterfaceLabel!
     @IBOutlet var days5Label: WKInterfaceLabel!
 
+    @IBOutlet var dayTable: WKInterfaceTable!
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
@@ -29,6 +31,29 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
 
+        dayTable.setNumberOfRows(20, withRowType: "Days")
+        for index in 0 ..< dayTable.numberOfRows {
+            let row = dayTable.rowController(at: index) as! DayRowController
+            let rowString = String(format: "Line %02i", index + 1)
+            row.label.setText(rowString)
+        }
+
+//        for index in 0 ..< table.numberOfRows {
+//            let row = table.rowControllerAtIndex(index) as! TableRowController
+//            let rowString = String(format: "Split:%02i miles", index + 1)
+//            let paceString = "Pace:" + RunData.stringFromSeconds(runData.data[index])
+//            row.splits.setText(rowString)
+//            row.time.setText(paceString)
+//        }
+//        let totalPace = runData.totalTimeFromSplit(0, toSplit: runData.count - 1)
+//        let avgPace = runData.avgPaceFromSplit(0, toSplit: runData.count - 1)
+//        totalTimeLabel.setText(RunData.stringFromSeconds(totalPace))
+//        avgPaceLabel.setText(RunData.stringFromSeconds(avgPace))
+
+
+        /////////////////////////////////
+
+        /*
         // get the current date
         let date = Date()
         let calendar = Calendar.current
@@ -104,6 +129,7 @@ class InterfaceController: WKInterfaceController {
         days3Label.setAttributedText(days3AttributedString)
         days4Label.setAttributedText(days4AttributedString)
         days5Label.setAttributedText(days5AttributedString)
+ */
 
         super.willActivate()
     }
