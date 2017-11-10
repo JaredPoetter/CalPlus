@@ -31,11 +31,41 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
 
-        dayTable.setNumberOfRows(20, withRowType: "Days")
-        for index in 0 ..< dayTable.numberOfRows {
-            let row = dayTable.rowController(at: index) as! DayRowController
-            let rowString = String(format: "Line %02i", index + 1)
-            row.label.setText(rowString)
+        // get the current date
+        let date = Date()
+        let calendar = Calendar.current
+
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let dayOfWeek = calendar.component(.weekday, from: date)
+
+        // finding the previous Sunday
+        var component = DateComponents()
+        component.weekday = 1 - dayOfWeek
+        let startingSunday = calendar.date(byAdding: component, to: date)
+        let startingSundayDate = calendar.component(.day, from: startingSunday!)
+
+        // calendar days
+        let daysOfWeek = "Su Mo Tu We Th Fr Sa"
+
+        let numberOfRows = 20
+        dayTable.setNumberOfRows(numberOfRows, withRowType: "Days")
+        for rowIndex in 0 ..< dayTable.numberOfRows {
+            var daysArray = ["", "", "", "", "", "", ""]
+
+            for dayIndex in 0...6 {
+                var component = DateComponents()
+                component.day = dayIndex + 1 + (7 * rowIndex) + (7 - dayOfWeek)
+                daysArray[dayIndex] = String(format: "%02d", calendar.component(.day, from: calendar.date(byAdding: component, to: date)!))
+            }
+
+            // creating calendar lines
+            let daysString = daysArray.joined(separator: " ")
+            let daysAttributedString = NSMutableAttributedString(string: daysString)
+
+            let row = dayTable.rowController(at: rowIndex) as! DayRowController
+            row.label.setAttributedText(daysAttributedString)
         }
 
 //        for index in 0 ..< table.numberOfRows {
