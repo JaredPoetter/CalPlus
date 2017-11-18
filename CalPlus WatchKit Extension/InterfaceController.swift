@@ -49,24 +49,114 @@ class InterfaceController: WKInterfaceController {
         // calendar days
         let daysOfWeek = "Su Mo Tu We Th Fr Sa"
 
-        let numberOfRows = 20
-        dayTable.setNumberOfRows(numberOfRows, withRowType: "Days")
-        for rowIndex in 0 ..< dayTable.numberOfRows {
+
+////////////TODO
+        // - before and after rows
+        // - scroll to keep the current week in the middle of the screen when the app is activated/opened
+        // - put in the month names
+        // - for the last and first week in the months
+        //    - gray out the other months days
+        //    - repeat the week for each month
+
+        let numberOfMonths = 6
+        var monthIndex = 0
+        var calendarArray = [String]()
+        var weekIndex = -10
+
+        while monthIndex < numberOfMonths {
             var daysArray = ["", "", "", "", "", "", ""]
+            var isStartOfMonth = false
+            var component = DateComponents()
 
             for dayIndex in 0...6 {
-                var component = DateComponents()
-                component.day = dayIndex + 1 + (7 * rowIndex) + (7 - dayOfWeek)
-                daysArray[dayIndex] = String(format: "%02d", calendar.component(.day, from: calendar.date(byAdding: component, to: date)!))
+                component.day = dayIndex + 1 + (7 * weekIndex) + (7 - dayOfWeek)
+                let dayNumber = calendar.component(.day, from: calendar.date(byAdding: component, to: date)!)
+
+                if (dayNumber == 1) {
+                    isStartOfMonth = true
+                }
+
+                daysArray[dayIndex] = String(format: "%02d", dayNumber)
+            }
+
+            if (isStartOfMonth) {
+                monthIndex += 1
+                let daysString = daysArray.joined(separator: " ")
+                let month = calendar.component(.month, from: calendar.date(byAdding: component, to: date)!)
+                let monthString = calendar.standaloneMonthSymbols[month - 1]
+                calendarArray.append(daysString)
+                calendarArray.append(monthString)
+                calendarArray.append(daysString)
+            }
+            else {
+                let daysString = daysArray.joined(separator: " ")
+                calendarArray.append(daysString)
+            }
+
+            isStartOfMonth = false
+            weekIndex += 1
+        }
+
+        dayTable.setNumberOfRows(calendarArray.count, withRowType: "Days")
+        for rowIndex in 0 ..< calendarArray.count {
+            let string = NSMutableAttributedString(string: calendarArray[rowIndex])
+            let row = dayTable.rowController(at: rowIndex) as! DayRowController
+            row.label.setAttributedText(string)
+        }
+
+
+
+/*
+        let beforeRows = 20
+        let afterRows = 20
+        let numberOfRows = beforeRows + afterRows
+        dayTable.setNumberOfRows(numberOfRows, withRowType: "Days")
+        var weekIndex = 0
+        var monthStartOffset = 0
+        for rowIndex in 0 ..< dayTable.numberOfRows {
+            var daysArray = ["", "", "", "", "", "", ""]
+            var isStartOfMonth = false
+            var component = DateComponents()
+
+            print(weekIndex)
+
+            for dayIndex in 0...6 {
+//                component.day = dayIndex + 1 + (7 * (rowIndex)) + (7 - dayOfWeek)
+                component.day = dayIndex + 1 + (7 * weekIndex) + (7 - dayOfWeek)
+                let dayNumber = calendar.component(.day, from: calendar.date(byAdding: component, to: date)!)
+
+                if (dayNumber == 1) {
+                    isStartOfMonth = true
+                    monthStartOffset += 1
+
+//                    print("start of month")
+//                    print(dayNumber)
+                }
+
+                daysArray[dayIndex] = String(format: "%02d", dayNumber)
             }
 
             // creating calendar lines
-            let daysString = daysArray.joined(separator: " ")
-            let daysAttributedString = NSMutableAttributedString(string: daysString)
+            if (isStartOfMonth) {
+                let month = calendar.component(.month, from: calendar.date(byAdding: component, to: date)!)
+                let monthAttributedString = NSMutableAttributedString(string: calendar.standaloneMonthSymbols[month - 1])
 
-            let row = dayTable.rowController(at: rowIndex) as! DayRowController
-            row.label.setAttributedText(daysAttributedString)
+                let row = dayTable.rowController(at: rowIndex) as! DayRowController
+                row.label.setAttributedText(monthAttributedString)
+            }
+            else {
+                weekIndex += 1
+                let daysString = daysArray.joined(separator: " ")
+                let daysAttributedString = NSMutableAttributedString(string: daysString)
+
+                let row = dayTable.rowController(at: rowIndex) as! DayRowController
+                row.label.setAttributedText(daysAttributedString)
+            }
+
+            isStartOfMonth = false
         }
+
+        dayTable.scrollToRow(at: 3)
 
 //        for index in 0 ..< table.numberOfRows {
 //            let row = table.rowControllerAtIndex(index) as! TableRowController
@@ -79,7 +169,7 @@ class InterfaceController: WKInterfaceController {
 //        let avgPace = runData.avgPaceFromSplit(0, toSplit: runData.count - 1)
 //        totalTimeLabel.setText(RunData.stringFromSeconds(totalPace))
 //        avgPaceLabel.setText(RunData.stringFromSeconds(avgPace))
-
+*/
 
         /////////////////////////////////
 

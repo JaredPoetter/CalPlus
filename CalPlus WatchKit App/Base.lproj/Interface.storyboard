@@ -19,14 +19,6 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CalPlus_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="136" height="15" alignment="center" text="Month" textAlignment="center" id="QWk-bs-alW">
-                            <fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="16"/>
-                        </label>
-                        <separator alignment="left" id="FKf-Tw-c3w"/>
-                        <label width="136" height="15" alignment="center" text="Week" textAlignment="center" baselineAdjustment="alignCenters" id="72h-13-DlF">
-                            <fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
-                        </label>
-                        <separator alignment="left" id="YjX-ti-QSS"/>
                         <table alignment="left" id="WkU-qB-u8U">
                             <items>
                                 <tableRow identifier="Days" selectable="NO" id="iIA-H3-Q51" customClass="DayRowController" customModule="CalPlus_WatchKit_Extension">
@@ -46,8 +38,6 @@
                     </items>
                     <connections>
                         <outlet property="dayTable" destination="WkU-qB-u8U" id="duW-BJ-no8"/>
-                        <outlet property="monthLabel" destination="QWk-bs-alW" id="Wfa-Au-2hZ"/>
-                        <outlet property="weekLabel" destination="72h-13-DlF" id="iUZ-Gy-BPz"/>
                     </connections>
                 </controller>
             </objects>
