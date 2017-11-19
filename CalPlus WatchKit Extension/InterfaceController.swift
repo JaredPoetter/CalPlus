@@ -86,6 +86,7 @@ class InterfaceController: WKInterfaceController {
                 let monthString = calendar.standaloneMonthSymbols[month - 1]
                 calendarArray.append(daysString)
                 calendarArray.append(monthString)
+                calendarArray.append("SU MO TU WE TH FR SA")
                 calendarArray.append(daysString)
             }
             else {
