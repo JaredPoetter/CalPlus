@@ -57,46 +57,7 @@ class InterfaceController: WKInterfaceController {
         //    - gray out the other months days
         //    - repeat the week for each month
 
-        let numberOfMonths = 6
-        var monthIndex = 0
-        var calendarArray = [CalendarLine]()
-        var weekIndex = -10
-
-        while monthIndex < numberOfMonths {
-            var daysArray = ["", "", "", "", "", "", ""]
-            var isStartOfMonth = false
-            var component = DateComponents()
-
-            for dayIndex in 0...6 {
-                component.day = dayIndex + 1 + (7 * weekIndex) + (7 - dayOfWeek)
-                let dayNumber = calendar.component(.day, from: calendar.date(byAdding: component, to: date)!)
-
-                if (dayNumber == 1) {
-                    isStartOfMonth = true
-                }
-
-                daysArray[dayIndex] = String(format: "%02d", dayNumber)
-            }
-
-            if (isStartOfMonth) {
-                monthIndex += 1
-                let daysString = daysArray.joined(separator: " ")
-                let month = calendar.component(.month, from: calendar.date(byAdding: component, to: date)!)
-                let monthString = calendar.standaloneMonthSymbols[month - 1]
-                calendarArray.append(CalendarLine(lineType: "day", contents: daysString))
-                calendarArray.append(CalendarLine(lineType: "month", contents: monthString))
-                calendarArray.append(CalendarLine(lineType: "weekdays", contents: "SU MO TU WE TH FR SA"))
-                calendarArray.append(CalendarLine(lineType: "day", contents: daysString))
-            }
-            else {
-                let daysString = daysArray.joined(separator: " ")
-                calendarArray.append(CalendarLine(lineType: "day", contents: daysString))
-            }
-
-            isStartOfMonth = false
-            weekIndex += 1
-        }
-
+        let calendarArray = CalendarList().monthList(date: date, monthsBefore: 6, monthsAfter: 6)
 
         var tableRowTypes = [String]()
         for rowIndex in 0 ..< calendarArray.count {
