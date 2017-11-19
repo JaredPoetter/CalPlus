@@ -29,6 +29,9 @@
                                             </label>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="label" destination="XWG-CE-Br2" id="oTC-bw-H98"/>
+                                    </connections>
                                 </tableRow>
                                 <tableRow identifier="Days" selectable="NO" id="Ve3-RV-jUQ" customClass="DayRowController" customModule="CalPlus_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="W6H-B6-CdQ">
@@ -41,6 +44,19 @@
                                     </group>
                                     <connections>
                                         <outlet property="label" destination="Pv9-O1-mA5" id="h1q-IB-yN1"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Days" selectable="NO" id="wEX-mo-hy8" userLabel="Separator" customClass="DayRowController" customModule="CalPlus_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Iww-Ng-gh2">
+                                        <items>
+                                            <label width="136" height="10" alignment="center" text="Days" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="QfO-gN-G8n" userLabel="Days">
+                                                <fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="QfO-gN-G8n" id="gbu-R8-aFd"/>
                                     </connections>
                                 </tableRow>
                             </items>
