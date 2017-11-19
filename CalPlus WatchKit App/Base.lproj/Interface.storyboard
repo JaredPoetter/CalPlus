@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,16 +21,26 @@
                     <items>
                         <table alignment="left" id="WkU-qB-u8U">
                             <items>
-                                <tableRow identifier="Days" selectable="NO" id="iIA-H3-Q51" customClass="DayRowController" customModule="CalPlus_WatchKit_Extension">
+                                <tableRow identifier="Month" selectable="NO" id="iIA-H3-Q51" customClass="MonthRowController" customModule="CalPlus_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="e1V-IK-DjH">
                                         <items>
-                                            <label width="136" height="22" alignment="center" text="Days" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="XWG-CE-Br2" userLabel="Days">
+                                            <label width="136" height="22" alignment="center" text="Month" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="XWG-CE-Br2" userLabel="Month">
                                                 <fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
                                             </label>
                                         </items>
                                     </group>
+                                </tableRow>
+                                <tableRow identifier="Days" selectable="NO" id="Ve3-RV-jUQ" customClass="DayRowController" customModule="CalPlus_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="W6H-B6-CdQ">
+                                        <items>
+                                            <label width="136" height="10" alignment="center" text="Days" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="Pv9-O1-mA5" userLabel="Days">
+                                                <fontDescription key="font" name="JoystixMonospace-Regular" family="Joystix" pointSize="8"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </group>
                                     <connections>
-                                        <outlet property="label" destination="XWG-CE-Br2" id="5h7-vj-lgQ"/>
+                                        <outlet property="label" destination="Pv9-O1-mA5" id="h1q-IB-yN1"/>
                                     </connections>
                                 </tableRow>
                             </items>
